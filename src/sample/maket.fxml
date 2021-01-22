@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.WebView?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" id="mainVbox" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="640.0"
+      style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="sample.Controller">
+    <JFXComboBox fx:id="ComboBox" editable="true" focusColor="WHITE" onKeyPressed="#actionEnter" prefWidth="400.0"
+                 promptText="Введите название фильма" style="-fx-background-color: WHITE;" unFocusColor="WHITE">
+        <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+        </padding>
+        <VBox.margin>
+            <Insets bottom="10.0" top="10.0"/>
+        </VBox.margin>
+    </JFXComboBox>
+    <AnchorPane fx:id="allinfo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+        <ImageView fx:id="imageViewBackground" cache="true" fitHeight="372.0" fitWidth="640.0" nodeOrientation="INHERIT"
+                   pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <cursor>
+                <Cursor fx:constant="NONE"/>
+            </cursor>
+
+            <Image url="@../../../../Downloads/kinopoisk.ru-The-Gentlemen-3416816.jpg"/>
+        </ImageView>
+        <AnchorPane style="-fx-background-color: linear-gradient(to right, black 30%, rgba(255, 255, 255, 0) 75%);"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="0.0"/>
+        <HBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+            </padding>
+            <JFXButton fx:id="btn_MainDescription" alignment="CENTER" contentDisplay="CENTER" ripplerFill="WHITE"
+                       text="О фильме" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="Roboto Bold" size="16.0"/>
+                </font>
+            </JFXButton>
+            <JFXButton fx:id="btn_SecondDescription" alignment="CENTER" contentDisplay="CENTER" text="Детали"
+                       textFill="WHITE">
+                <font>
+                    <Font name="Roboto Bold" size="16.0"/>
+                </font>
+            </JFXButton>
+        </HBox>
+        <VBox fx:id="box_MainDescription" layoutY="47.0" prefHeight="326.0" prefWidth="640.0" visible="false"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Text fx:id="title_main" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Джентльмены">
+                <font>
+                    <Font name="Roboto Bold" size="24.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets left="15.0"/>
+                </VBox.margin>
+            </Text>
+            <Text fx:id="info_main" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="6.5, 2018, боевик, триллер США 1 ч 50 мин">
+                <font>
+                    <Font name="Roboto" size="14.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets left="15.0" top="15.0"/>
+                </VBox.margin>
+            </Text>
+            <Text fx:id="description_main" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Успешное возвращение Гая Ричи к корням — острая и живая криминальная комедия с блестящим актерским составом"
+                  wrappingWidth="300.0">
+                <font>
+                    <Font name="Roboto" size="14.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets left="15.0" top="5.0"/>
+                </VBox.margin>
+            </Text>
+            <JFXButton fx:id="btn_trailer" text="Смотреть трейлер" textFill="WHITE">
+                <font>
+                    <Font name="Roboto Bold" size="18.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets left="15.0" top="30.0"/>
+                </VBox.margin>
+            </JFXButton>
+        </VBox>
+        <HBox fx:id="box_SecondDescription" alignment="CENTER_LEFT" spacing="5.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.60000000000002">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                <Text fx:id="rating_second" fill="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="6.5">
+                    <font>
+                        <Font name="Roboto Bold" size="18.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="number_ratings_second" fill="#e5e5e5" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="113468 оценок">
+                    <font>
+                        <Font name="Roboto" size="12.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="16.0"/>
+                    </VBox.margin>
+                </Text>
+                <Text fx:id="full_description_second" fill="WHITE" lineSpacing="2.0" strokeType="INSIDE"
+                      text="Пять лет, восемь месяцев, 12 дней… и далее. Именно столько Дебби Оушен разрабатывала план величайшего ограбления своей жизни. Она точно знает, что для него потребуется, – команда лучших в своем деле, начиная с ее давней сообщницы Лу Миллер. Вместе они собирают команду уникальных специалистов. Их цель – неотразимые 150 миллионов долларов в бриллиантах – в бриллиантах на шее всемирно известной а…"
+                      wrappingWidth="270.0">
+                    <font>
+                        <Font name="Roboto" size="14.0"/>
+                    </font>
+                </Text>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="В главных ролях:" wrappingWidth="200.0">
+                    <font>
+                        <Font name="Roboto Bold" size="18.0"/>
+                    </font>
+                </Text>
+                <JFXListView fx:id="roleListView_second" disable="true"
+                             style="-fx-background-color: rgba(255, 255, 255, 0);"/>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+                <Text fill="WHITE" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Оригинальное название"
+                      wrappingWidth="150.0">
+                    <font>
+                        <Font name="Roboto Bold" size="18.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="originalName_second" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="The Gentlemen"/>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Режиссёры">
+                    <font>
+                        <Font name="Roboto Bold" size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </Text>
+                <JFXListView fx:id="editorsListView_second" style="-fx-background-color: rgba(255, 255, 255, 0);"/>
+            </VBox>
+        </HBox>
+        <WebView fx:id="trailer" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0"
+                 prefWidth="-1.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+        <JFXButton fx:id="closeWeb" layoutX="272.0" visible="false" layoutY="333.0" prefHeight="26.0" prefWidth="95.0"
+                   text="Выключить"
+                   AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="273.0"
+                   AnchorPane.topAnchor="333.0"/>
+    </AnchorPane>
+</VBox>
