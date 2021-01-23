@@ -69,7 +69,7 @@ public class Controller {
     void initialize() {
         allinfo.setVisible(false);
 
-        ComboBox.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+        ComboBox.valueProperty().addListener((observableValue, s, t1) -> {
             find_item = t1;
             try {
                 BoxBlur boxBlur = new BoxBlur(0, 0, 0);
@@ -105,7 +105,10 @@ public class Controller {
 
     public void showFilm() throws ParseException, IOException, URISyntaxException {
         var aaa = Parser.ParseByKeyWord(find_item).get("films").toString();
-        if (aaa.equals("[]")) return;
+        if (aaa.equals("[]")) {
+            System.out.println("Not found film");
+            return;
+        }
         allinfo.setVisible(true);
         JSONObject Data = (JSONObject) ((JSONArray) Parser.ParseByKeyWord(find_item).get("films")).get(0);
         JSONObject film = Parser.ParseById(((Long) Data.get("filmId")).toString());
